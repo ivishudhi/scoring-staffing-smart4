@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 from scoring import MIN_MISSIONS, charger_ressources, charger_win_ratio, scorer, calculer_contrib
 
-st.set_page_config(page_title="Scoring des besoins de staffing", layout="centered")
+st.set_page_config(page_title="Scoring de besoins de staffing", layout="centered")
 
 def render(html):
     lignes = "\n".join(l.strip() for l in html.strip().splitlines())
@@ -132,7 +132,7 @@ if qualifier:
     render('<p class="s4-card-titre">Historique de la session</p>')
 
 if not st.session_state.historique:
-    st.caption("Aucun prospect qualifié pour le moment.")
+    st.caption("Aucun besoin qualifié pour le moment.")
 else:
     df_hist = pd.DataFrame(st.session_state.historique)
     nb_fort = int((df_hist["Résultat"] == "Fort potentiel").sum())
