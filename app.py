@@ -1,5 +1,3 @@
-# app.py : interface Streamlit, toute la logique est dans scoring.py
-
 from datetime import datetime
 from pathlib import Path
 import matplotlib.pyplot as plt
@@ -7,8 +5,7 @@ import pandas as pd
 import streamlit as st
 from scoring import MIN_MISSIONS, charger_ressources, charger_win_ratio, scorer, calculer_contrib
 
-st.set_page_config(page_title="Scoring de prospects", layout="centered")
-
+st.set_page_config(page_title="Scoring des besoins de staffing", layout="centered")
 
 def render(html):
     lignes = "\n".join(l.strip() for l in html.strip().splitlines())
@@ -28,7 +25,7 @@ render("""
 <div class="s4-header">
     <div class="s4-logo">S4</div>
     <div class="s4-header-texte">
-        <p class="s4-header-titre">Scoring de prospects commerciaux</p>
+        <p class="s4-header-titre">Scoring de besoins de staffing</p>
         <p class="s4-header-sous-titre">Smart4 Engineering &middot; aide à la décision commerciale</p>
     </div>
 </div>
@@ -36,7 +33,7 @@ render("""
 
 with st.sidebar:
     st.subheader("À propos")
-    st.write("Renseignez les infos d'un prospect, l'outil calcule sa probabilité de succès et vous conseille.")
+    st.write("Renseignez les infos d'un besoin, l'outil calcule sa probabilité de succès et vous conseille.")
     st.divider()
     st.subheader("Accessibilité")
     grand_texte = st.toggle("Texte agrandi", value=False)
@@ -51,7 +48,7 @@ if grand_texte:
 if "historique" not in st.session_state:
     st.session_state.historique = []
 
-render('<p class="s4-card-titre">Nouveau prospect</p>')
+render('<p class="s4-card-titre">Nouveau besoin</p>')
 with st.container(border=True):
     col1, col2 = st.columns(2)
     with col1:
@@ -60,7 +57,7 @@ with st.container(border=True):
     with col2:
         duree = st.number_input("Durée de la mission (mois)", value=3.0, min_value=0.0)
         delai = st.number_input("Délai avant démarrage (mois)", value=1.0)
-    qualifier = st.button("Qualifier ce prospect", type="primary", use_container_width=True)
+    qualifier = st.button("Qualifier ce besoin", type="primary", use_container_width=True)
 
 if qualifier:
     # on calcule le score et on prepare les 3 facteurs les plus importants
