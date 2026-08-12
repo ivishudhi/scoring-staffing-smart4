@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 from scoring import MIN_MISSIONS, charger_ressources, charger_win_ratio, scorer, calculer_contrib
 
-st.set_page_config(page_title="Scoring de besoins de staffing", layout="centered")
+st.set_page_config(page_title="Scoring des besoins de staffing", layout="centered")
 
 def render(html):
     lignes = "\n".join(l.strip() for l in html.strip().splitlines())
@@ -151,7 +151,7 @@ else:
     st.dataframe(df_hist, use_container_width=True, hide_index=True)
     csv = df_hist.to_csv(index=False).encode("utf-8")
     col_dl, col_clear = st.columns(2)
-    col_dl.download_button("Télécharger en CSV", data=csv, file_name="prospects_qualifies.csv", use_container_width=True)
+    col_dl.download_button("Télécharger en CSV", data=csv, file_name="besoins_qualifies.csv", use_container_width=True)
     if col_clear.button("Vider l'historique", use_container_width=True):
         st.session_state.historique = []
         st.rerun()
