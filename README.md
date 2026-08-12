@@ -5,7 +5,7 @@ Le modèle estime la probabilité de succès d'un prospect à partir de ses cara
 
 J'ai réalisé ce projet dans le cadre de mon mémoire de fin d'études M2 Data & IA à Nexa Digital School, en alternance en tant que BI Analyst chez Smart4 Engineering.
 
-**Application déployée** : https://smart4-scoring-prospects.streamlit.app/
+**Application déployée** : https://smart4-scoring-staffing.streamlit.app/
 
 ## Confidentialité
 
