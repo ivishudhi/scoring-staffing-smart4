@@ -8,7 +8,7 @@ import shap
 import streamlit as st
 
 DOSSIER = Path(__file__).resolve().parent
-MODEL_PATH = DOSSIER / "model_scoring_prospects.joblib"
+MODEL_PATH = DOSSIER / "model_scoring_staffing.joblib"
 MAPPINGS_PATH = DOSSIER / "mappings.json"
 WIN_RATIO_PATH = DOSSIER / "win_ratio_par_entite.csv"
 
